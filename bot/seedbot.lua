@@ -243,6 +243,7 @@ Our channels
 @powerbotpro [persian]
 ]],
     help_text = [[
+لیست دستور ها :
 Commands list :
 
 کيک کردن:(با ريپلي هم انجام ميشود)
