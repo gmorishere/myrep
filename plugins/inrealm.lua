@@ -7,13 +7,13 @@ local function create_group(msg)
         if is_sudo(msg) or is_realm(msg) and is_admin(msg) then
                 local group_creator = msg.from.print_name
         create_group_chat (group_creator, group_name, ok_cb, false)
-                return 'Group '..string.gsub(group_name, '_', ' ')..' has been created.'
+                return 'گروه '..string.gsub(group_name, '_', ' ')..' ساخته شد'
         end
 end
  
 local function set_description(msg, data, target, about)
     if not is_admin(msg) then
-        return "For admins only!"
+        return "فقط مخصوص ادمین ها"
     end
     local data_cat = 'description'
         data[tostring(target)][data_cat] = about
