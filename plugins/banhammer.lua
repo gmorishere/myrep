@@ -11,7 +11,7 @@ local function pre_process(msg)
       if banned or is_gbanned(user_id) then -- Check it with redis
       print('User is banned!')
       local name = user_print_name(msg.from)
-      savelog(msg.to.id, name.." ["..msg.from.id.."] is banned and kicked ! ")-- Save to logs
+      savelog(msg.to.id, name.." ["..msg.from.id.."] بن و کیک شد ! ")-- Save to logs
       kick_user(user_id, msg.to.id)
       end
     end
@@ -48,7 +48,7 @@ local function pre_process(msg)
     if msg.action.user.username ~= nil then
       if string.sub(msg.action.user.username:lower(), -3) == 'bot' and not is_momod(msg) and bots_protection == "yes" then --- Will kick bots added by normal users
         local name = user_print_name(msg.from)
-          savelog(msg.to.id, name.." ["..msg.from.id.."] added a bot > @".. msg.action.user.username)-- Save to logs
+          savelog(msg.to.id, name.." ["..msg.from.id.."] یک ربات ادد کرد > @".. msg.action.user.username)-- Save to logs
           kick_user(msg.action.user.id, msg.to.id)
       end
     end
@@ -93,25 +93,25 @@ local function username_id(cb_extra, success, result)
       if member_id == our_id then return false end
       if get_cmd == 'kick' then
         if is_momod2(member_id, chat_id) then
-          return send_large_msg(receiver, "you can't kick mods/owner/admins")
+          return send_large_msg(receiver, "شما قادر به اخراج ادمین ها و صاحب  گروه و مودراتور ها نیستید")
         end
         return kick_user(member_id, chat_id)
       elseif get_cmd == 'ban' then
         if is_momod2(member_id, chat_id) then
-          return send_large_msg(receiver, "you can't ban mods/owner/admins")
+          return send_large_msg(receiver, "شما قادر به اخراج ادمین ها و صاحب  گروه و مودراتور ها نیستید")")
         end
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] banned')
+        send_large_msg(receiver, 'کاربر @'..member..' ['..member_id..'] بن شد ')
         return ban_user(member_id, chat_id)
       elseif get_cmd == 'unban' then
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] unbanned')
+        send_large_msg(receiver, 'کاربر @'..member..' ['..member_id..'] آن بن شد')
         local hash =  'banned:'..chat_id
         redis:srem(hash, member_id)
-        return 'User '..user_id..' unbanned'
+        return 'کاربر '..user_id..' آن بن شد'
       elseif get_cmd == 'banall' then
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] globally banned')
+        send_large_msg(receiver, 'کاربر @'..member..' ['..member_id..'] بن گلوبال شد')
         return banall_user(member_id, chat_id)
       elseif get_cmd == 'unbanall' then
-        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] unbanned')
+        send_large_msg(receiver, 'کاربر @'..member..' ['..member_id..'] unbanned')
         return unbanall_user(member_id, chat_id)
       end
     end
@@ -200,7 +200,7 @@ local function run(msg, matches)
         redis:srem(hash, user_id)
         local name = user_print_name(msg.from)
         savelog(msg.to.id, name.." ["..msg.from.id.."] unbaned user ".. matches[2])
-        return 'User '..user_id..' unbanned'
+        return 'کاربر '..user_id..' آن بن شد'
       else
         local member = string.gsub(matches[2], '@', '')
         local get_cmd = 'unban'
@@ -225,10 +225,10 @@ local function run(msg, matches)
           return
         end
         if not is_admin(msg) and is_momod2(matches[2], msg.to.id) then
-          return "you can't kick mods/owner/admins"
+          return "شما قادر به اخراج ادمین ها و صاحب  گروه و مودراتور ها نیستید")"
         end
         if tonumber(matches[2]) == tonumber(msg.from.id) then
-          return "You can't kick your self !"
+          return "شما قادر به اخراج خود نمیباشید"
         end
         local name = user_print_name(msg.from)
         savelog(msg.to.id, name.." ["..msg.from.id.."] kicked user ".. matches[2])
@@ -241,7 +241,7 @@ local function run(msg, matches)
         chat_info(receiver, username_id, {get_cmd=get_cmd, receiver=receiver, chat_id=msg.to.id, member=member})
       end
     else
-      return 'This isn\'t a chat group'
+      return 'اینجا یک گروه نیست . لطفا در یک گروه امتحان کنید'
     end
   end
 
@@ -279,7 +279,7 @@ local function run(msg, matches)
           return false 
         end
         unbanall_user(user_id)
-        return 'User ['..user_id..' ] removed from global ban list'
+        return 'کاربر ['..user_id..' ] از لیست کاربرهای گلوبال بن حذف شد'
       else
         local member = string.gsub(matches[2], '@', '')
         local get_cmd = 'unbanall'
