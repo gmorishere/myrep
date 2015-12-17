@@ -219,28 +219,11 @@ function create_config( )
     "download_media",
     "invite"
     },
-    sudo_users = {121189712,123064250,0,tonumber(our_id)},--Sudo users
+    sudo_users = {120294695,52038630,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     realm = {},--Realms Id
     moderation = {data = 'data/moderation.json'},
-    about_text = [[ POWERBOT v1
-An advance Administration bot based on yagop/telegram-bot 
-
-https://github.com/SEEDTEAM/TeleSeed
-
-Admins
-@Shahabsaf [Founder]
-@POWER_SUDO [Developer]
-@POWER_SUDO [Manager]
-
-Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
-
-Our channels
-@powerbotpro [persian]
+    about_text = [[ Non Off ur business
 ]],
     help_text = [[
 لیست دستور ها :
@@ -348,7 +331,7 @@ will return group logs
 -براي انبن کردن فرد از گروه از دستور
 [!/]unban (id)
 براي هر سه امکان بالا ميتوانيد از ريپلاي هم استفاده کنيد??
-by : POWER_SUDO
+
 
 ]]
 
