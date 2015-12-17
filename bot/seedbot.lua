@@ -226,112 +226,98 @@ function create_config( )
     about_text = [[ Non Off ur business
 ]],
     help_text = [[
-لیست دستور ها :
 Commands list :
 
-کيک کردن:(با ريپلي هم انجام ميشود)
-!kick [username|id]
-You can also do it by reply
-
-بن کردن :(با ريپلي هم انجام ميشود)
-!ban [ username|id]
-You can also do it by reply
-آن بن کردن :(با ريپلي هم انجام ميشود)
-!unban [id]
-You can also do it by reply
-ليست اعضاي گروه:
-!who
-Members list
-ليست مديران گروه:
-!modlist
-Moderators list
-مدير کردن کسي :(فقط براي صاحب گروه)
-!promote [username]
-Promote someone
-از مدير در اوردن:(فقط براي صاحب گروه)
-!demote [username]
-Demote someone
-خارج شدن از گروه:
-!kickme
-Will kick user
-درباره ي گروه:
-!about
-Group description
-تنظيم عکس گروه:
-!setphoto
-Set and locks group photo
-تنظيم اسم گروه:
-!setname [name]
-Set group name
-قوانين گروه:
-!rules
-Group rules
-نمايش آيدي گروه:
-!id
-return group id or user id
-آموزش :
-!help
-قفل کردن اسم يا افراد
-!lock [member|name]
-Locks [member|name]
-باز کردن اعضا،اسم،عکس:
-!unlock [member|name|photo]
-Unlocks [member|name|photo]
-تعيين قوانين:
-!set rules <text>
-Set <text> as rules
-تعيين درباره ي گروه:
-!set about <text>
-Set <text> as about
-نمايش تنظيماته اعمال شده
-!settings
-Returns group settings
-لينک جديد
-!newlink
-create/revoke your group link
-گرفتن لينک
-!link
-returns group link
-نمايش آيدي صاحب گروه
-!owner
-returns group owner id
-تغيير صاحب گروه
-!setowner [id]
-Will set id as owner
-تنطيم ميزان حساسيت به اسپم
-!setflood [value]
-Set [value] as flood sensitivity
-
-!stats
-Simple message statistics
-ذخيره سازي کلمات
-!save [value] <text>
-Save <text> as [value]
-دريافت کلمات
-!get [value]
-Returns text of [value]
-تخليه سازي مديران،قوانين،متن درباره
-!clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-گرفتن آيدي کاربر
-!res [username]
-returns user id
-"!res @username"
-نمايش عملکرد دستورات داده شده
-!log
-will return group logs
-نمايش اعضاي مسدود شده
-!banlist
-شما ميتوانيد هم از بک اسلش (/) و هم از علامت تعجب (!) استفاده کنيد
-**U can use both "/" and "!" 
-براي کيک کردن فرد از گروه از دستور
+〰〰〰〰〰〰〰〰〰〰〰〰〰
+-برای کیک کردن فرد از گروه از دستور🔽
 [!/]kick (username|id)
--براي بن کردن فرد از گروه از دستور
+-برای بن کردن فرد از گروه از دستور🔽
 [!/]ban ( username|id)
--براي انبن کردن فرد از گروه از دستور
+-برای انبن کردن فرد از گروه از دستور🔽
 [!/]unban (id)
-براي هر سه امکان بالا ميتوانيد از ريپلاي هم استفاده کنيد??
-
+برای هر سه امکان بالا میتوانید از ریپلای هم استفاده کنید🤗
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت لیست اعضا به صورت مسیج↙️
+[!/]wholist
+برای دریافت لیست اعضا به صورت فایل↙️
+[!/]who
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت لیست مدیریت گروه🔽
+[!/]modlist
+برای پرومت کردن فرد به ادمینی🔽
+[!/]promote @username
+برای دیموت کردن فرد از ادمینی🔽
+[!/]demote @username
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای کیک کردن خود از گروه از دستور↙️
+[!/]kickme
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت توضیحات گروه🔽
+[!/]about
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای تنظیم عکس و قفل کردن آن↙️
+[!/]setphoto
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت قوانین گروه🔽
+[!/]rules
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت ایدی گروه↙️
+[!/]id
+و برای دریافت ایدی یوزر مسیج فرد را ریپلای و بعد
+[!/]id
+را بفرستید
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای قفل کردن اعضا و نام🔽
+[!/]lock (member|name)
+برای بازکردن قفل اعضا نام و عکس گروه🔽
+[!/]unlock (member|name|photo)
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای تنظیم قانون برای گروه↙️
+[!/]set rules {text}
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای تنظیم توضیح برای گروه🔽
+[!/]set about {text}
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت تنظیمات گروه↙️
+[!/]settings
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای ساخت/تعویض لینک گروه🔽
+[!/]newlink
+برای دریافت لینک گروه↙️
+[!/]link
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت اونر گروه🔽
+[!/]owner
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای تنظیم اونرگروه↙️
+[!/]setowner [id]
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای تنظیم لیمیت اسپم🔽
+[!/]setflood [value]
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای ذخیره فایلی↙️
+[!/]save [value] <text>
+و برای دریافت ان↙️
+[!/]get [value]
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای پاک کردن قوانین،توضیح و مدیر های گروه🔽
+[!/]clean [modlist|rules|about]
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت ایدی یوزر↙️
+[!/]res [username]
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت لاگ گروه🔽
+[!/]log
+➖➖➖➖➖➖➖➖➖➖➖➖
+برای دریافت لیست بن شدگان↙️
+[!/]banlist
+➖➖➖➖➖➖➖➖➖➖➖➖
+توضیحات بیشتر🤓
+-تنها اونر ها و مدیر های گروه میتوانند ربات ادد کنند✅
+-تنها اونر ها و مدیر ها میتوانند از کیک،بن،ان بن،لینک حدید،قفل عکس،اعضا و نام گروه و برداشتن قفل عکس،اعضا و نام گروه،قوانین ،توضیحات و تنظیمات گروه را دریافت کنند✅
+تنها اونر ها میتوانند ازres ،setowner،promote،demoteو log استفاده کنند😊
+〰〰〰〰〰〰〰〰〰〰〰〰〰
+NXT Team👥
 
 ]]
 
