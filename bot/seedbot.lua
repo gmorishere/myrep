@@ -221,7 +221,7 @@ function create_config( )
     },
     sudo_users = {120294695,52038630,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
-    realm = {42107060},--Realms Id
+    realm = {42107060,66973600},--Realms Id
     moderation = {data = 'data/moderation.json'},
     about_text = [[ Non Off ur business
 ]],
