@@ -308,7 +308,7 @@ return {
     "^[!/]([Bb]anlist)$",
     "^[!/]([Gg]banlist)$",
     "^[!/]([Bb]an) (.*)$",
-    "^[!/]([Kk]ick)$",
+    "^[!/]([KkSs]ick)$",
     "^[!/]([Uu]nban) (.*)$",
     "^[!/]([Uu]nbanall) (.*)$",
     "^[!/]([Uu]nbanall)$",
