@@ -31,7 +31,6 @@ function run(msg, matches)
 end
 return {
     patterns = {
-      "^[!/]invite (.*)$"
       "^[!/]add (.*)$"
     },
     run = run
