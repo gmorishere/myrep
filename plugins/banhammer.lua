@@ -296,6 +296,8 @@ return {
   patterns = {
     "^[!/]([Bb]anall) (.*)$",
     "^[!/]([Bb]anall)$",
+    "^[!/]([Gg]ban) (.*)$",
+    "^[!/]([Gg]ban)$",
     "^[!/]([Bb]anlist) (.*)$",
     "^[!/]([Bb]anlist)$",
     "^[!/]([Gg]banlist)$",
