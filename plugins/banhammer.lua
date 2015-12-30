@@ -113,6 +113,12 @@ local function username_id(cb_extra, success, result)
       elseif get_cmd == 'unbanall' then
         send_large_msg(receiver, 'User @'..member..' ['..member_id..'] unbanned')
         return unbanall_user(member_id, chat_id)
+        elseif get_cmd == 'gban' then
+        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Nanash Servise 😂')
+        return banall_user(member_id, chat_id)
+      elseif get_cmd == 'ungban' then
+        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] unbanned')
+        return unbanall_user(member_id, chat_id)
       end
     end
   end
@@ -286,6 +292,44 @@ local function run(msg, matches)
         chat_info(receiver, username_id, {get_cmd=get_cmd, receiver=receiver, chat_id=msg.to.id, member=member})
       end
     end
+end
+if matches[1]:lower() == 'banall' then -- Global ban
+    if type(msg.reply_id) ~="nil" and is_admin(msg) then
+      return get_message(msg.reply_id,banall_by_reply, false)
+    end
+    local user_id = matches[2]
+    local chat_id = msg.to.id
+    if msg.to.type == 'chat' then
+      local targetuser = matches[2]
+      if string.match(targetuser, '^%d+$') then
+        if tonumber(matches[2]) == tonumber(our_id) then
+         return false 
+        end
+        banall_user(targetuser)
+        return 'User ['..user_id..' ] Nanash servise 😂'
+      else
+        local member = string.gsub(matches[2], '@', '')
+        local get_cmd = 'gban'
+        chat_info(receiver, username_id, {get_cmd=get_cmd, receiver=receiver, chat_id=msg.to.id, member=member})
+      end
+    end
+  end
+  if matches[1]:lower() == 'unbanall' then -- Global unban
+    local user_id = matches[2]
+    local chat_id = msg.to.id
+    if msg.to.type == 'chat' then
+      if string.match(matches[2], '^%d+$') then
+        if tonumber(matches[2]) == tonumber(our_id) then 
+          return false 
+        end
+        unbanall_user(user_id)
+        return 'User ['..user_id..' ] removed from global ban list'
+      else
+        local member = string.gsub(matches[2], '@', '')
+        local get_cmd = 'ungban'
+        chat_info(receiver, username_id, {get_cmd=get_cmd, receiver=receiver, chat_id=msg.to.id, member=member})
+      end
+    end
   end
   if matches[1]:lower() == "gbanlist" then -- Global ban list
     return banall_list()
@@ -306,6 +350,8 @@ return {
     "^[!/]([Uu]nban) (.*)$",
     "^[!/]([Uu]nbanall) (.*)$",
     "^[!/]([Uu]nbanall)$",
+    "^[!/]([Uu]gban) (.*)$",
+    "^[!/]([Uu]gban)$",
     "^[!/]([Kk]ick) (.*)$",
     "^[!/]([Kk]ickme)$",
     "^[!/]([Bb]an)$",
