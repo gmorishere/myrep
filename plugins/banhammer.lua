@@ -119,8 +119,6 @@ local function username_id(cb_extra, success, result)
       elseif get_cmd == 'ungban' then
         send_large_msg(receiver, 'User @'..member..' ['..member_id..'] unbanned')
         return unbanall_user(member_id, chat_id)
-        end
-       end
       end
     end
   end
