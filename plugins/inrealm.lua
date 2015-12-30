@@ -4,8 +4,9 @@ do
  
 local function create_group(msg)
         -- superuser and admins only (because sudo are always has privilege)
-        if is_sudo(msg) and is_admin(msg) then
+        if is_sudo(msg) or is_realm(msg) and is_admin(msg) then
                 local group_creator = msg.from.print_name
+                create_group_chat (group_creator, group_name, ok_cb, false)
                 return 'گروه '..string.gsub(group_name, '_', ' ')..' ساخته شد'
         end
 end
